@@ -4,17 +4,17 @@
 %define		module	hatchling
 Summary:	Modern, extensible Python build backend
 Name:		python3-%{module}
-Version:	1.24.2
-Release:	2
+Version:	1.27.0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/hatchling/%{module}-%{version}.tar.gz
-# Source0-md5:	814948c375ba44603877d032338811ba
+# Source0-md5:	6ffb3087c9b6a9ffbfc1bb394f7ed1a8
 URL:		https://pypi.org/project/hatchling/
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
 BuildRequires:	python3-modules >= 1:3.2
-BuildRequires:	python3-packaging >= 23.2
+BuildRequires:	python3-packaging >= 24.2
 BuildRequires:	python3-pathspec
 BuildRequires:	python3-trove_classifiers
 %if %{with tests}
