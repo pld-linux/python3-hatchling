@@ -16,6 +16,7 @@ BuildRequires:	python3-installer
 BuildRequires:	python3-modules >= 1:3.2
 BuildRequires:	python3-packaging >= 24.2
 BuildRequires:	python3-pathspec
+BuildRequires:	python3-pluggy
 BuildRequires:	python3-trove_classifiers
 %if %{with tests}
 #BuildRequires:	python3-
