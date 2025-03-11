@@ -5,7 +5,7 @@
 Summary:	Modern, extensible Python build backend
 Name:		python3-%{module}
 Version:	1.27.0
-Release:	3
+Release:	4
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/hatchling/%{module}-%{version}.tar.gz
