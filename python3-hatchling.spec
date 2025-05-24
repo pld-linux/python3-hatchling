@@ -1,3 +1,4 @@
+#
 # Conditional build:
 %bcond_with	tests	# unit tests
 
@@ -6,7 +7,7 @@ Summary:	Modern, extensible Python build backend
 Summary(pl.UTF-8):	Nowoczesny, rozszerzalny backend budowania pakietów dla Pythona
 Name:		python3-%{module}
 Version:	1.27.0
-Release:	5
+Release:	6
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/hatchling/%{module}-%{version}.tar.gz
