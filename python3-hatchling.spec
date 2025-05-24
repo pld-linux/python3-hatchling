@@ -3,6 +3,7 @@
 
 %define		module	hatchling
 Summary:	Modern, extensible Python build backend
+Summary(pl.UTF-8):	Nowoczesny, rozszerzalny backend budowania pakietów dla Pythona
 Name:		python3-%{module}
 Version:	1.27.0
 Release:	5
@@ -34,8 +35,13 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+This is the extensible, standards compliant build backend used by
+Hatch (<https://github.com/pypa/hatch>).
 
 %description -l pl.UTF-8
+Ten pakiet to rozszerzalny, zgodny ze standardami backend budowania
+pakietów Pythona, wykorzystywany przez Hatch
+(<https://github.com/pypa/hatch>).
 
 %prep
 %setup -q -n %{module}-%{version}
