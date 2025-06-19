@@ -7,11 +7,12 @@ Summary:	Modern, extensible Python build backend
 Summary(pl.UTF-8):	Nowoczesny, rozszerzalny backend budowania pakietów dla Pythona
 Name:		python3-%{module}
 Version:	1.27.0
-Release:	6
+Release:	7
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/hatchling/%{module}-%{version}.tar.gz
 # Source0-md5:	6ffb3087c9b6a9ffbfc1bb394f7ed1a8
+Patch0:		no-names-normalization.patch
 URL:		https://pypi.org/project/hatchling/
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
@@ -46,6 +47,7 @@ pakietów Pythona, wykorzystywany przez Hatch
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch -P0 -p1
 
 %build
 %py3_build_pyproject

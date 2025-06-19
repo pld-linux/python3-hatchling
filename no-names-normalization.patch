@@ -1,0 +1,37 @@
+--- hatchling-1.27.0/src/hatchling/metadata/utils.py.orig	2020-02-02 01:00:00.000000000 +0100
++++ hatchling-1.27.0/src/hatchling/metadata/utils.py	2025-06-19 14:40:26.303286164 +0200
+@@ -16,9 +16,13 @@
+     return re.search('^([A-Z0-9]|[A-Z0-9][A-Z0-9._-]*[A-Z0-9])$', project_name, re.IGNORECASE) is not None
+ 
+ 
+-def normalize_project_name(project_name: str) -> str:
++def name_normalization(name: str) -> str:
+     # https://peps.python.org/pep-0503/#normalized-names
+-    return re.sub(r'[-_.]+', '-', project_name).lower()
++    return re.sub(r'[-_.]+', '-', name).lower()
++
++
++def normalize_project_name(project_name: str) -> str:
++    return project_name
+ 
+ 
+ def normalize_requirement(requirement: Requirement) -> None:
+--- hatchling-1.27.0/src/hatchling/metadata/core.py.orig	2020-02-02 01:00:00.000000000 +0100
++++ hatchling-1.27.0/src/hatchling/metadata/core.py	2025-06-19 15:07:27.916613000 +0200
+@@ -11,6 +11,7 @@
+     is_valid_project_name,
+     normalize_project_name,
+     normalize_requirement,
++    name_normalization,
+ )
+ from hatchling.plugin.manager import PluginManagerBound
+ from hatchling.utils.constants import DEFAULT_CONFIG_FILE
+@@ -429,7 +430,7 @@
+         https://peps.python.org/pep-0621/#name
+         """
+         if self._name is None:
+-            self._name = normalize_project_name(self.raw_name)
++            self._name = name_normalization(self.raw_name)
+ 
+         return self._name
+ 
